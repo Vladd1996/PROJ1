@@ -1,34 +1,30 @@
-package org.example;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Objects;
 
-    import java.util.Objects;
-    import java.util.Scanner;
-
-    public class Main {
-        public static void main(String[] args) {
-            int obj1= new Scanner(System.in).nextInt();
-            if (obj1>7) System.out.println("Привет");
-            /*_____________________________________________________
-            _____________________________________________________*/
-            Scanner scan = new Scanner(System.in);
-            String obj2=scan.nextLine();
-            if(Objects.equals(obj2, "Вячеслав"))
-            {
-                System.out.println("Привет, Вячеслав");
-            }
-            else
-            {
-                System.out.println("Нет такого имени");
-            }
-            /*___________________________________________________
-            ___________________________________________________*/
-            int[] obj3 = new int[9];
-            for(int i=0;i<9;i++)
-            {
-                obj3[i]=new Scanner(System.in).nextInt();
-            }
-            for(int i=0;i<9;i++)
-            {
-                if(obj3[i]%3==0)System.out.println(obj3[i]);
-            }
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader r1 = new BufferedReader(new InputStreamReader(System.in));
+        int a = Integer.parseInt(r1.readLine());
+        if (a>7) System.out.println("Привет");
+        String obj1= r1.readLine();
+        if(Objects.equals(obj1, "Вячеслав"))
+        {
+            System.out.println("Привет, Вячеслав");
         }
+        else
+        {
+            System.out.println("Нет такого имени");
+        }
+        int[] obj2 = new int[9];
+        for(int i=0;i<9;i++)
+        {
+            obj2[i]= Integer.parseInt(r1.readLine());
+        }
+        for(int i=0;i<9;i++)
+        {
+            if(obj2[i]%3==0)System.out.println(obj2[i]);
+        }
+    }
 }
